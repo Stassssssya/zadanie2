@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+   /*     Scanner scanner = new Scanner(System.in);
         List<Course> courses = new ArrayList<>();
         List<Student> students = new ArrayList<>();
         List<Instructor> instructors = new ArrayList<>();
@@ -21,6 +21,28 @@ public class Main {
         fillUniversities(scanner, departaments, students, universities);
 
         System.out.println(students);
+    */
+        University bsu = new University("БелГУ", "г. Белгород ул. Победы 104", "958553");
+        University msu = new University("МГУ", "г. Москва ул. Колмогорова 1", "354755");
+
+        Departament departament1 = new Departament("Факультет физики и математики");
+        Departament departament2 = new Departament("Факультет журналистики");
+        Departament departament3 = new Departament("Факультет физической культуры");
+
+        Instructor instructor1 = new Instructor("Васильев Петр Иванович");
+        Instructor instructor2 = new Instructor("Иванов Дмитрий Павлович");
+        Instructor instructor3 = new Instructor("Гуляева Ирина Васильевна");
+
+        Student student1 = new Student("Илья", (long) 0);
+        Student student2 = new Student("Митя", (long) 1);
+        Student student3 = new Student("Ксеня", (long) 2);
+        Student student4 = new Student("Данил", (long) 3);
+        Student student5 = new Student("Лёля", (long) 4);
+
+        Course course1 = new Course("Математика", (long) 0);
+        Course course2 = new Course("Русский язык", (long) 1);
+        Course course3 = new Course("Биология", (long) 2);
+        Course course4 = new Course("Астрономия", (long) 3);
     }
 
     private static void fillUniversities(Scanner scanner, List<Departament> departaments, List<Student> students, List<University> universities) {
