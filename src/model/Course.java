@@ -11,6 +11,7 @@ public class Course {
 
     public Course() {
     }
+
     private String name;
     private Long courseID;
 
