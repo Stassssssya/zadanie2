@@ -1,25 +1,14 @@
-package model;
+package main.model;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class University {
-
-    public University(String name, String address, String phone, List<Departament> departaments, List<Student> students) {
-        this.name = name;
-        this.address = address;
-        this.phone = phone;
-        this.departaments = departaments;
-        this.students = students;
-    }
 
     public University(String name, String address, String phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
-    }
-
-    public University() {
     }
 
     private String name;
@@ -68,16 +57,45 @@ public class University {
         this.students = students;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        University that = (University) o;
-        return Objects.equals(name, that.name) && Objects.equals(address, that.address) && Objects.equals(phone, that.phone) && Objects.equals(departaments, that.departaments) && Objects.equals(students, that.students);
+
+    public void addStudent(Student student) {
+        if (students == null) {
+            students = new ArrayList<>();
+        }
+        students.add(student);
+    }
+
+    public void removeStudent(Student student) {
+        students.remove(student);
+    }
+
+    public Student getStudent(int index) {
+        return students.get(index);
+    }
+
+    public void addDepartament(Departament departament) {
+        if (departaments == null) {
+            departaments = new ArrayList<>();
+        }
+        departaments.add(departament);
+    }
+
+    public void removeDepartament(Departament departament) {
+        departaments.remove(departament);
+    }
+
+    public Departament getDepartament(int index) {
+        return departaments.get(index);
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(name, address, phone, departaments, students);
+    public String toString() {
+        return "University{" + '\n' +
+                "name='" + name + '\n' +
+                "address='" + address + '\n' +
+                "phone='" + phone + '\n' +
+                "departaments=" + departaments + '\n' +
+                "students=" + students + '\n' +
+                '}';
     }
 }

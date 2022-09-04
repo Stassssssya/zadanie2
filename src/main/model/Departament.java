@@ -1,21 +1,12 @@
-package model;
+package main.model;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Departament {
 
-    public Departament(String name, List<Course> courses, List<Instructor> instructors) {
-        this.name = name;
-        this.courses = courses;
-        this.instructors = instructors;
-    }
-
     public Departament(String name) {
         this.name = name;
-    }
-
-    public Departament() {
     }
 
     private String name;
@@ -46,16 +37,27 @@ public class Departament {
         this.instructors = instructors;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Departament that = (Departament) o;
-        return Objects.equals(name, that.name) && Objects.equals(courses, that.courses) && Objects.equals(instructors, that.instructors);
+    public void addInstructor(Instructor instructor) {
+        if (instructors == null) {
+            instructors = new ArrayList<>();
+        }
+        instructors.add(instructor);
+    }
+
+    public void removeInstructor(Instructor instructor) {
+        instructors.remove(instructor);
+    }
+
+    public Instructor getInstructor(int index) {
+        return instructors.get(index);
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(name, courses, instructors);
+    public String toString() {
+        return "Departament{" +
+                "name='" + name + '\'' +
+                ", courses=" + courses +
+                ", instructors=" + instructors +
+                '}';
     }
 }

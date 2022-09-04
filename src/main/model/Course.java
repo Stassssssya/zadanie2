@@ -1,15 +1,10 @@
-package model;
-
-import java.util.Objects;
+package main.model;
 
 public class Course {
 
     public Course(String name, Long courseID) {
         this.name = name;
         this.courseID = courseID;
-    }
-
-    public Course() {
     }
 
     private String name;
@@ -32,15 +27,10 @@ public class Course {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Course course = (Course) o;
-        return Objects.equals(name, course.name) && Objects.equals(courseID, course.courseID);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, courseID);
+    public String toString() {
+        return "Course{" +
+                "name='" + name + '\'' +
+                ", courseID=" + courseID +
+                '}';
     }
 }
